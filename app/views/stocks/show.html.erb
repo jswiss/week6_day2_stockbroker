@@ -1,0 +1,8 @@
+<h2><%= @stock.name %></h2> 
+
+<p><%= @stock.shareprice%></p>
+
+<% @stock.clients.each do |client| %>
+	<p>Stock owners: <%= link_to client.name, client %></p>
+<% end %>
+

@@ -9,7 +9,28 @@ class ClientsController < ApplicationController
 	end
 
 	def create
-		@client = Client.find(params[:id])
+		@client = Client.new(client_params)
+		if @client.save
+			redirect_to @client
+		else
+			render :new
+		end
 	end
 
+	def show
+		@client = Client.find(params[:id])
+		# @stock_quantity = @client.client_stocks.find(:stock_quantity)
+	end
+
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_client
+      @client = Client.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def client_params
+      params.require(:client).permit(:name, :cash)
+    end
 end
