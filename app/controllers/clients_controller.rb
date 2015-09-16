@@ -19,7 +19,6 @@ class ClientsController < ApplicationController
 
 	def show
 		@client = Client.find(params[:id])
-		# @stock_quantity = @client.client_stocks.find(:stock_quantity)
 	end
 
 

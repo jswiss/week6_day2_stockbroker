@@ -9,7 +9,7 @@
 <body>
 
 	<header>
-		<h1>Stockbroker</h1>
+		<h1><%= link_to 'Greedbroker', clients_path %></h1>
 		<ul>
 			<li><%= link_to('Add New Client', new_client_path ) %></li>
 		</ul>
@@ -17,6 +17,15 @@
 
 
 <%= yield %>
+
+
+<footer>	
+	<ul>
+		<li>
+			<%= link_to 'Buy Stocks', new_client_stock_path %>
+		</li>
+	</ul>
+</footer>
 
 </body>
 </html>
